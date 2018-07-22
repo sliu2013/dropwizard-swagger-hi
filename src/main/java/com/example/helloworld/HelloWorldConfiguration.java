@@ -3,7 +3,10 @@ package com.example.helloworld;
 import io.dropwizard.Configuration;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.NotEmpty;
-import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 
 public class HelloWorldConfiguration extends Configuration {
     @NotEmpty
@@ -32,6 +35,10 @@ public class HelloWorldConfiguration extends Configuration {
         this.defaultName = name;
     }
 
-    @JsonProperty("swagger")
-    public SwaggerBundleConfiguration swaggerBundleConfiguration;
+    @Valid
+    @NotNull
+    @JsonProperty
+    private String swaggerBasePath;
+    public String getSwaggerBasePath(){ return swaggerBasePath; }
+
 }

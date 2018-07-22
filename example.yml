@@ -12,5 +12,4 @@ server:
 logging:
   level: INFO
 
-swagger:
-    resourcePackage: com.example.helloworld.resources
+swaggerBasePath: <a class="vglnk" href="http://localhost:8090" rel="nofollow"><span>http</span><span>://</span><span>localhost</span><span>:</span><span>8090</span></a>

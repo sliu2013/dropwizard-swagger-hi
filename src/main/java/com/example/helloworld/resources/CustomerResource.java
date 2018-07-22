@@ -16,6 +16,7 @@ import java.util.List;
 
 @Api(value = "customers", description = "RESTful API to interact with customer resources.")
 @Path("customers")
+@Produces({"application/json"})
 public class CustomerResource {
 
 //    @Injector

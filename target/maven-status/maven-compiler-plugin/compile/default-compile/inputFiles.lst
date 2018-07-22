@@ -1,8 +1,8 @@
-/Users/skyl/git/sandbox/dropwizard-hi2/src/main/java/com/example/helloworld/HelloWorldApplication.java
-/Users/skyl/git/sandbox/dropwizard-hi2/src/main/java/com/example/helloworld/resources/HelloWorldResource.java
-/Users/skyl/git/sandbox/dropwizard-hi2/src/main/java/com/example/helloworld/health/TemplateHealthCheck.java
-/Users/skyl/git/sandbox/dropwizard-hi2/src/main/java/com/example/helloworld/resources/CustomerResource.java
-/Users/skyl/git/sandbox/dropwizard-hi2/src/main/java/com/example/helloworld/api/Customer.java
-/Users/skyl/git/sandbox/dropwizard-hi2/src/main/java/com/example/helloworld/api/CustomerDAO.java
-/Users/skyl/git/sandbox/dropwizard-hi2/src/main/java/com/example/helloworld/api/Saying.java
-/Users/skyl/git/sandbox/dropwizard-hi2/src/main/java/com/example/helloworld/HelloWorldConfiguration.java
+/Users/skyl/git/sandbox/dropwizard-swagger-hi/src/main/java/com/example/helloworld/HelloWorldApplication.java
+/Users/skyl/git/sandbox/dropwizard-swagger-hi/src/main/java/com/example/helloworld/HelloWorldConfiguration.java
+/Users/skyl/git/sandbox/dropwizard-swagger-hi/src/main/java/com/example/helloworld/api/CustomerDAO.java
+/Users/skyl/git/sandbox/dropwizard-swagger-hi/src/main/java/com/example/helloworld/api/Saying.java
+/Users/skyl/git/sandbox/dropwizard-swagger-hi/src/main/java/com/example/helloworld/resources/CustomerResource.java
+/Users/skyl/git/sandbox/dropwizard-swagger-hi/src/main/java/com/example/helloworld/health/TemplateHealthCheck.java
+/Users/skyl/git/sandbox/dropwizard-swagger-hi/src/main/java/com/example/helloworld/resources/HelloWorldResource.java
+/Users/skyl/git/sandbox/dropwizard-swagger-hi/src/main/java/com/example/helloworld/api/Customer.java
