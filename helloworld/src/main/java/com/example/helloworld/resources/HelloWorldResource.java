@@ -1,5 +1,6 @@
 package com.example.helloworld.resources;
 
+import com.example.helloworld.HelloWorldApplication;
 import com.example.helloworld.api.Saying;
 import com.codahale.metrics.annotation.Timed;
 
@@ -26,8 +27,9 @@ public class HelloWorldResource {
 
     @GET
     @Timed
-    public Saying sayHello(@QueryParam("name") Optional<String> name) {
+    public Saying sayHello(@QueryParam("name") Optional<String> name) throws Exception {
         final String value = String.format(template, name.orElse(defaultName));
+
         return new Saying(counter.incrementAndGet(), value);
     }
 }

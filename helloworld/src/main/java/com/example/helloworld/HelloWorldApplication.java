@@ -5,14 +5,22 @@ import com.example.helloworld.resources.CustomerResource;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import io.dropwizard.Application;
+import io.dropwizard.discovery.DiscoveryBundle;
+import io.dropwizard.discovery.DiscoveryFactory;
+import io.dropwizard.discovery.client.DiscoveryClient;
+import io.dropwizard.discovery.client.DiscoveryClientManager;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import com.example.helloworld.resources.HelloWorldResource;
 import com.example.helloworld.health.TemplateHealthCheck;
 import io.federecio.dropwizard.swagger.SwaggerBundle;
 import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
+import org.joda.time.DateTime;
 
 public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
+
+    public static DiscoveryClient client;
+
     public static void main(String[] args) throws Exception {
         new HelloWorldApplication().run(args);
     }
@@ -22,15 +30,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
         return "hello-world";
     }
 
-    @Override
-    public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap) {
-        bootstrap.addBundle(new SwaggerBundle<HelloWorldConfiguration>() {
-            @Override
-            protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(HelloWorldConfiguration configuration) {
-                return configuration.swaggerBundleConfiguration;
-            }
-        });
-    }
+
 
     @Override
     public void run(HelloWorldConfiguration configuration,
@@ -45,5 +45,32 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
         environment.healthChecks().register("template", healthCheck);
         environment.jersey().register(resource);
         environment.jersey().register(swaggerApiResource);
+
+
+
+        // register a new service to consume other services registered in Zookeeper instance
+        client = discoveryBundle.newDiscoveryClient("other-service");
+        environment.lifecycle().manage(new DiscoveryClientManager(client));
+
+    }
+
+
+    // DiscoveryBundle & initialize() are making the zookeeper instance as the service-registry
+    private final DiscoveryBundle<HelloWorldConfiguration> discoveryBundle = new DiscoveryBundle<HelloWorldConfiguration>() {
+        @Override
+        public DiscoveryFactory getDiscoveryFactory(HelloWorldConfiguration configuration) {
+            return configuration.getDiscoveryFactory();
+        }
+
+    };
+    @Override
+    public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap) {
+        bootstrap.addBundle(new SwaggerBundle<HelloWorldConfiguration>() {
+            @Override
+            protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(HelloWorldConfiguration configuration) {
+                return configuration.swaggerBundleConfiguration;
+            }
+        });
+        bootstrap.addBundle(discoveryBundle);
     }
 }

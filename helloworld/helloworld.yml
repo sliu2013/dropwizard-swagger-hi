@@ -14,3 +14,6 @@ logging:
 
 swagger:
     resourcePackage: com.example.helloworld.resources
+
+discovery:
+  serviceName: hello-world

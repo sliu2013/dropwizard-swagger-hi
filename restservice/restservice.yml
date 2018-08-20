@@ -1,0 +1,13 @@
+server:
+    applicationConnectors:
+    - type: http
+      port: 9090
+    adminConnectors:
+    - type: http
+      port: 9091
+
+logging:
+  level: INFO
+
+discovery:
+  serviceName: restful-hi

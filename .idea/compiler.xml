@@ -6,11 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="grpcservice" />
+        <module name="helloworld" />
+        <module name="restservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dropwizard-hi2" target="1.8" />
+      <module name="dropwizard-swagger-hi" target="1.8" />
+      <module name="example" target="1.8" />
+      <module name="grpcservice" target="1.8" />
       <module name="helloworld" target="1.8" />
+      <module name="restservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

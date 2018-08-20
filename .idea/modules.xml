@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dropwizard-swagger-hi.iml" filepath="$PROJECT_DIR$/dropwizard-swagger-hi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/grpcservice/grpcservice.iml" filepath="$PROJECT_DIR$/grpcservice/grpcservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloworld/helloworld.iml" filepath="$PROJECT_DIR$/helloworld/helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restservice/restservice.iml" filepath="$PROJECT_DIR$/restservice/restservice.iml" />
     </modules>
   </component>
 </project>
