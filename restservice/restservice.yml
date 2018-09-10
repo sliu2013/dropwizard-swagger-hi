@@ -11,3 +11,4 @@ logging:
 
 discovery:
   serviceName: restful-hi
+  listenAddress: localhost

@@ -1,0 +1,14 @@
+server:
+    applicationConnectors:
+    - type: http
+      port: 9070
+    adminConnectors:
+    - type: http
+      port: 9071
+
+logging:
+  level: INFO
+
+discovery:
+  serviceName: grpcservice-hi
+  listenAddress: localhost

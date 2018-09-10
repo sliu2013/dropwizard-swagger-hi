@@ -2,7 +2,6 @@ package com.example.helloworld.resources;
 
 import com.example.helloworld.api.Customer;
 import com.example.helloworld.api.CustomerDAO;
-import com.google.inject.Inject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
